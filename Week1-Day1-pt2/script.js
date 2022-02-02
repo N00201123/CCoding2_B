@@ -1,24 +1,20 @@
+let rVal=0;
+
 function setup() {
     createCanvas(500,500)
-    background(125);
+    background(0);
+    angleMode(DEGREES)
+    rectMode(CENTER)
 }
 
 function draw() {
-    drawGrid(5);
+    
+
+    drawGrid(40,color(100,0,0), 1);
+    drawGrid(10,color(200,0,0), 2);
 }
 
 
-function drawGrid(numBoxes) {
-    fill(125);
-    stroke(255);
 
-
-for(let j=0; j<numBoxes; j++) {
-    for(let i=0; i<=numBoxes; i++) {
-        let boxSize = width/numBoxes;
-        rect(i*boxSize, j*boxSize,boxSize, boxSize)
-    } 
-  }
-}
 
 
