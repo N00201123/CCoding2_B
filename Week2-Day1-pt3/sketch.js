@@ -11,7 +11,7 @@ let scaledData = [];
 let maxValue;
 
 let numTicks = 10;
-let tickIncrements 
+let tickIncrements; 
 let tickSpacing = chartHeight/numTicks;
 let availableWidth = chartWidth - (margin*2) - (spacing*(data.length-1))
 let barWidth = availableWidth/data.length;
