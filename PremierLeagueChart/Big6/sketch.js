@@ -16,6 +16,17 @@ let data02 = [{name: "Man United", goalScored: 681, goalConceded:332},
 {name: "Man City", goalScored: 858, goalConceded:336},
 {name: "Spurs", goalScored: 637, goalConceded:394}];
 
+let data03 = [{season:"10/11", value:[1,6,4,2,3,5]}, 
+{season:"11/12", value:[2,8,3,6,1,4]}, 
+{season:"12/13", value:[1,7,4,3,2,5]}, 
+{season:"13/14", value:[7,2,4,3,1,6]},
+{season:"14/15", value:[4,6,3,1,2,5]},
+{season:"15/16", value:[5,8,2,10,4,3]},
+{season:"16/17", value:[6,4,5,1,3,2]},
+{season:"17/18", value:[2,4,6,5,1,3]},
+{season:"18/19", value:[6,2,5,3,1,4]},
+{season:"19/20", value:[3,1,8,4,2,6]}];
+
 //this is an array method that maps out a new array
 //property of an objesct
 
@@ -28,11 +39,17 @@ function setup() {
     chart01.posX = 60;
     chart01.posY = 400;
 
-    chart02 = new ScatteredBarChart(data02);
+    chart02 = new ScatteredChart(data02);
     chart02.chartWidth = 300;
     chart02.chartHeight = 300;
     chart02.posX = 500;
     chart02.posY = 400;
+
+    chart03 = new LineChart(data03);
+    chart03.chartWidth = 300;
+    chart03.chartHeight = 300;
+    chart03.posX = 60;
+    chart03.posY = 825;
 }
 
 
@@ -40,8 +57,10 @@ function draw() {
     background('#B8FFF9');
     chart01.updateValues()
     chart02.updateValues()
+    chart03.updateValues()
     chart01.render()
     chart02.render()
+    chart03.render()
     
 }
 
