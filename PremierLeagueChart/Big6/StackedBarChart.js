@@ -1,4 +1,4 @@
-class LineChart{
+class StackedBarChart{
     constructor(_data){
         this.data = _data;
 
@@ -6,7 +6,8 @@ class LineChart{
         this.chartWidth = 200;
         this.spacing = 10;
         this.margin = 20;
-        this.numTicks = 9;
+        this.numTicks = 11;
+        this.legendSpace = 40;
         this.posX = 100;
         this.posY = 400;
         this.tickIncrements;
@@ -15,15 +16,16 @@ class LineChart{
         this.tickSpacing;
         this.barWidth;
         this.availableWidth;
-        this.title = "Positioning"
-        this.horizontalTitle = "Season"
-        this.verticalTitle = "Points"
+        this.title = "Premier League Big 6 Most Points"
+        this.horizontalTitle = "Teams"
+        this.verticalTitle = "Trophies"
+        this.showLegend = true;
 
         this.showValues = false;
         this.showLabels = true;
         this.rotateLabels = true;
 
-        this.colors = [color('#F43910'), color('#C90808'), color('#F3AEAE'), color('#0D2968'), color('#96B2F1'), color('#FFFFFF')];
+        this.colors = [color('#FFD32D'), color('#C90808'), color('#34BE82'), color('#533E85')];
 
         this.updateValues();
         this.calculateMaxValue();
@@ -31,8 +33,8 @@ class LineChart{
 
     updateValues(){
         this.tickSpacing = this.chartHeight / this.numTicks; //space between ticks on  the left 
-        //this.availableWidth = this.chartWidth - (this.margin * 2) - (this.spacing * (this.data.length - 1)); //available space for bars
-        //this.barWidth = this.availableWidth / this.data.length; //bar width
+        this.availableWidth = this.chartWidth - (this.margin * 2) - (this.spacing * (this.data.length - 1)); //available space for bars
+        this.barWidth = this.availableWidth / this.data.length; //bar width
     }
 
     calculateMaxValue(){
@@ -72,10 +74,8 @@ class LineChart{
         for(let i=0; i<=this.numTicks; i++){
             //ticks
             stroke(0);
-            strokeWeight(1);
-            line(this.tickSpacing * i, 0, this.tickSpacing * i, 15);
-            line(0,this.tickSpacing * -i, -15, this.tickSpacing * -i);
-            
+            strokeWeight(0.5);
+            line(0, this.tickSpacing * -i, -10, this.tickSpacing * -i);
     
             //numbers (text)
             fill(0);
@@ -83,12 +83,6 @@ class LineChart{
             textSize(11);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), -15, this.tickSpacing * -i);
-
-            fill(0);
-            noStroke();
-            textSize(11);
-            textAlign(RIGHT, CENTER);
-            text(this.data[i].season, this.tickSpacing * i, 15);
         }
     }
     
@@ -103,36 +97,26 @@ class LineChart{
     
     drawRects(){
         push();
+        translate(this.margin, 0);
         for(let i=0; i<this.data.length; i++){
-            beginShape();
-            for (let j=0; j<this.data[i].values.length; j++) {
-                let colorNumber = i % 6;
-                noFill();
-                stroke(this.colors[colorNumber]);
-                strokeWeight(3);
-                vertex(j * 60, -this.scaledData(this.data[i].values[j]));
+            push();
+            for(let j=0; j<this.data[i].values.length; j++) {
+            let colorNumber = j % 4;
+            //bars
+            fill(this.colors[colorNumber]);
+            noStroke();
+            rect((this.barWidth + this.spacing) * i, 0, this.barWidth, this.scaledData(-this.data[i].values[j]));
+            translate(0, this.scaledData(-this.data[i].values[j]));
             }
-            endShape();
-
-        for(let i=0; i<this.data.length; i++){
-            for (let j=0; j<this.data[i].values.length; j++) {
-
-                let colorNumber = i % 6;
-                fill(this.colors[colorNumber]);
-                stroke(255);
-                strokeWeight(1);
-                ellipse(j*60, -this.scaledData(this.data[i].values[j]),8,8);
-                }
-            }
-                
-        
+            
+            pop();
             //numbers (text)
             if(this.showValues){
                 noStroke();
                 fill(0);
                 textSize(16);
                 textAlign(CENTER, BOTTOM);
-                text(this.data[i].season, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, this.scaledData(-this.data[i].season));
+                text(this.data[i].total, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, this.scaledData(-this.data[i].total));
             }
     
             //text
@@ -156,6 +140,20 @@ class LineChart{
                     text(this.data[i].name, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, 20);
                 }
                 
+            }
+
+            if(this.showLegend){
+                push();
+                translate(0, this.margin);
+                
+                fill(255, 211, 45);
+                rect(this.chartWidth+20, -this.legendSpace*0 -5, 10, 10);
+                
+                fill(0);
+                textSize();
+                textAlign(LEFT, CENTER);
+                text("EPL",this.chartWidth+40, this.legendSpace*-0);
+                pop();
             }
         }
         pop();

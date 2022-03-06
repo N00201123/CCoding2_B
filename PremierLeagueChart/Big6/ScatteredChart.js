@@ -5,7 +5,7 @@ class ScatteredChart{
         this.chartHeight = 300;
         this.chartWidth = 300;
         this.spacing = 10;
-        this.rectangle = 6;
+        this.legendSpace = 40;
         this.margin = 20;
         this.numTicks = 10;
         this.posX = 100;
@@ -141,15 +141,15 @@ class ScatteredChart{
 
             if(this.showLegend){
                 push();
-                translate(30, this.margin);
-                for(let i=0; i<this.rectangle; i++) {
-                    fill(this.colors[colorNumber]);
-                    rect(0, this.rectangle*i, 5, 5);
-                }
+                translate(0, this.margin);
+                
+                fill(this.colors[colorNumber]);
+                rect(this.chartWidth+20, -this.legendSpace*i -5, 10, 10);
+                
                 fill(0);
                 textSize();
                 textAlign(LEFT, CENTER);
-                text(this.data[i].name,15,5);
+                text(this.data[i].name,this.chartWidth+40, this.legendSpace*-i);
                 pop();
             }
         }
@@ -161,7 +161,7 @@ class ScatteredChart{
         fill(127,0,0);
         textSize(16);
         textAlign(CENTER, TOP);
-        translate(this.chartWidth/2, -this.chartHeight-30);
+        translate(this.chartWidth/2, -this.chartHeight-35);
         text(this.title, 0,0);
         pop()
     }

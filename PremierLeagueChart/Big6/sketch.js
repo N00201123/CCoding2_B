@@ -16,16 +16,31 @@ let data02 = [{name: "Man United", goalScored: 681, goalConceded:332},
 {name: "Man City", goalScored: 858, goalConceded:336},
 {name: "Spurs", goalScored: 637, goalConceded:394}];
 
-let data03 = [{season:"10/11", value:[1,6,4,2,3,5]}, 
-{season:"11/12", value:[2,8,3,6,1,4]}, 
-{season:"12/13", value:[1,7,4,3,2,5]}, 
-{season:"13/14", value:[7,2,4,3,1,6]},
-{season:"14/15", value:[4,6,3,1,2,5]},
-{season:"15/16", value:[5,8,2,10,4,3]},
-{season:"16/17", value:[6,4,5,1,3,2]},
-{season:"17/18", value:[2,4,6,5,1,3]},
-{season:"18/19", value:[6,2,5,3,1,4]},
-{season:"19/20", value:[3,1,8,4,2,6]}];
+let data03 = [{season:"10/11", total:10, values:[1,6,4,2,3,5]},
+{season:"11/12", total:10, values:[2,8,3,6,1,4]}, 
+{season:"12/13", total:10, values:[1,7,4,3,2,5]}, 
+{season:"13/14", total:10, values:[7,2,4,3,1,6]},
+{season:"14/15", total:10, values:[4,6,3,1,2,5]},
+{season:"15/16", total:10, values:[5,8,2,10,4,3]},
+{season:"16/17", total:10, values:[6,4,5,1,3,2]},
+{season:"17/18", total:10, values:[2,4,6,5,1,3]},
+{season:"18/19", total:10, values:[6,2,5,3,1,4]},
+{season:"19/20", total:10, values:[3,1,8,4,2,6]}
+];
+
+// let data04 = [{name: "Man United", total: 5, values:[{trophy: "EPL", value:2}, {trophy: "FA Cup", value:1}, {trophy: "League Cup", value:1}, {trophy: "ET", value:1}]}, 
+// {name: "Liverpool", total:3, values:[{trophy: "EPL", value:1}, {trophy: "FA Cup", value:0}, {trophy: "League Cup", value:1}, {trophy: "ET", value:1}]}, 
+// {name: "Arsenal", total:4, values:[{trophy: "EPL", value:0}, {trophy: "FA Cup", value:1}, {trophy: "League Cup", value:1}, {trophy: "ET", value:0}]}, 
+// {name: "Chelsea", total:8, values:[{trophy: "EPL", value:2}, {trophy: "FA Cup", value:2}, {trophy: "League Cup", value:1}, {trophy: "ET", value:3}]},
+// {name: "Man City", total:11, values:[{trophy: "EPL", value:4}, {trophy: "FA Cup", value:2}, {trophy: "League Cup", value:5}, {trophy: "ET", value:0}]}];
+
+let data04 = [{name: "Man United", total:5, values:[2,1,1,1]},
+{name: "Liverpool", total:3, values:[1,0,1,1]},
+{name: "Arsenal", total:4, values:[0,4,0,0]},
+{name: "Chelsea", total:8, values:[2,2,1,3]},
+{name: "Man City", total:11, values:[4,2,5,0]}
+];
+
 
 //this is an array method that maps out a new array
 //property of an objesct
@@ -50,6 +65,12 @@ function setup() {
     chart03.chartHeight = 300;
     chart03.posX = 60;
     chart03.posY = 825;
+
+    chart04 = new StackedBarChart(data04);
+    chart04.chartWidth = 300;
+    chart04.chartHeight = 300;
+    chart04.posX = 500;
+    chart04.posY = 825;
 }
 
 
@@ -58,9 +79,11 @@ function draw() {
     chart01.updateValues()
     chart02.updateValues()
     chart03.updateValues()
+    chart04.updateValues()
     chart01.render()
     chart02.render()
     chart03.render()
+    chart04.render()
     
 }
 
