@@ -1,7 +1,3 @@
-
-//let data = [30, 100, 90, 20, 180, 94];
-//scaledData = [];
-//let dataLabels = ["Oranges", "Bananas", "Lemons", "Limes", "Apples", "Grapes"];
 let data01 = [{name: "Man United", points:734}, 
 {name: "Liverpool", points:724}, 
 {name: "Arsenal", points:700}, 
