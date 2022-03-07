@@ -16,7 +16,7 @@ class StackedBarChart{
         this.tickSpacing;
         this.barWidth;
         this.availableWidth;
-        this.title = "Premier League Big 6 Most Points"
+        this.title = "Premier League Big 6 Most Trophies"
         this.horizontalTitle = "Teams"
         this.verticalTitle = "Trophies"
         this.showLegend = true;
@@ -144,15 +144,43 @@ class StackedBarChart{
 
             if(this.showLegend){
                 push();
-                translate(0, this.margin);
-                
+                translate(0, 0);
+                //EPL
                 fill(255, 211, 45);
+                noStroke();
                 rect(this.chartWidth+20, -this.legendSpace*0 -5, 10, 10);
                 
                 fill(0);
+                noStroke();
                 textSize();
                 textAlign(LEFT, CENTER);
                 text("EPL",this.chartWidth+40, this.legendSpace*-0);
+                //FA CUP
+                fill(201, 8, 8);
+                rect(this.chartWidth+20, -this.legendSpace*1 -5, 10, 10);
+
+                fill(0);
+                noStroke();
+                textSize();
+                textAlign(LEFT, CENTER);
+                text("FA Cup",this.chartWidth+40, this.legendSpace*-1);
+                //EFL CUP
+                fill(52, 190, 130);
+                rect(this.chartWidth+20, -this.legendSpace*2 -5, 10, 10);
+
+                fill(0);
+                noStroke();
+                textSize();
+                textAlign(LEFT, CENTER);
+                text("EFL Cup",this.chartWidth+40, this.legendSpace*-2);
+                //European Trophies
+                fill(83, 62, 133);
+                rect(this.chartWidth+20, -this.legendSpace*3 -5, 10, 10);
+
+                fill(0);
+                textSize();
+                textAlign(LEFT, CENTER);
+                text("European Trophies",this.chartWidth+40, this.legendSpace*-3);
                 pop();
             }
         }

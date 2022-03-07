@@ -141,7 +141,7 @@ class ScatteredChart{
 
             if(this.showLegend){
                 push();
-                translate(0, this.margin);
+                translate(0, 0);
                 
                 fill(this.colors[colorNumber]);
                 rect(this.chartWidth+20, -this.legendSpace*i -5, 10, 10);

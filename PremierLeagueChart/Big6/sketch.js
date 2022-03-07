@@ -16,16 +16,16 @@ let data02 = [{name: "Man United", goalScored: 681, goalConceded:332},
 {name: "Man City", goalScored: 858, goalConceded:336},
 {name: "Spurs", goalScored: 637, goalConceded:394}];
 
-let data03 = [{season:"10/11", total:10, values:[1,6,4,2,3,5]},
-{season:"11/12", total:10, values:[2,8,3,6,1,4]}, 
-{season:"12/13", total:10, values:[1,7,4,3,2,5]}, 
-{season:"13/14", total:10, values:[7,2,4,3,1,6]},
-{season:"14/15", total:10, values:[4,6,3,1,2,5]},
-{season:"15/16", total:10, values:[5,8,2,10,4,3]},
-{season:"16/17", total:10, values:[6,4,5,1,3,2]},
-{season:"17/18", total:10, values:[2,4,6,5,1,3]},
-{season:"18/19", total:10, values:[6,2,5,3,1,4]},
-{season:"19/20", total:10, values:[3,1,8,4,2,6]}
+let data03 = [{season:"10/11", total:10, values:[1,6,4,2,3,5]}, //Man U, Liv, Ars, Che, MCI, Tot
+{season:"11/12", total:10, values:[2,8,3,6,1,4]}, //Man U, Liv, Ars, Che, MCI, Tot
+{season:"12/13", total:10, values:[1,7,4,3,2,5]}, //Man U, Liv, Ars, Che, MCI, Tot
+{season:"13/14", total:10, values:[7,2,4,3,1,6]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"14/15", total:10, values:[4,6,3,1,2,5]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"15/16", total:10, values:[5,8,2,10,4,3]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"16/17", total:10, values:[6,4,5,1,3,2]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"17/18", total:10, values:[2,4,6,5,1,3]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"18/19", total:10, values:[6,2,5,3,1,4]},//Man U, Liv, Ars, Che, MCI, Tot
+{season:"19/20", total:10, values:[3,1,8,4,2,6]}//Man U, Liv, Ars, Che, MCI, Tot
 ];
 
 // let data04 = [{name: "Man United", total: 5, values:[{trophy: "EPL", value:2}, {trophy: "FA Cup", value:1}, {trophy: "League Cup", value:1}, {trophy: "ET", value:1}]}, 

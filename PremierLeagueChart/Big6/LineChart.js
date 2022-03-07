@@ -120,7 +120,7 @@ class LineChart{
                 let colorNumber = i % 6;
                 fill(this.colors[colorNumber]);
                 stroke(255);
-                strokeWeight(1);
+                strokeWeight(0);
                 ellipse(j*60, -this.scaledData(this.data[i].values[j]),8,8);
                 }
             }
