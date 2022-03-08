@@ -1,6 +1,8 @@
 {
-	"folders": [],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "PremierLeagueChart"
-	}
+	"folders": [
+		{
+			"path": "..\\.."
+		}
+	],
+	"settings": {}
 }
