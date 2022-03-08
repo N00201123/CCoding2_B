@@ -1,9 +1,9 @@
-let data01 = [{name: "Man United", points:734}, 
-{name: "Liverpool", points:724}, 
-{name: "Arsenal", points:700}, 
-{name: "Chelsea", points:730},
-{name: "Man City", points:826},
-{name: "Spurs", points:672}];
+// let data01 = [{name: "Man United", points:734}, 
+// {name: "Liverpool", points:724}, 
+// {name: "Arsenal", points:700}, 
+// {name: "Chelsea", points:730},
+// {name: "Man City", points:826},
+// {name: "Spurs", points:672}];
 
 let data02 = [{name: "Man United", goalScored: 681, goalConceded:332},
 {name: "Liverpool", goalScored: 729, goalConceded:410},
@@ -44,6 +44,7 @@ let data04 = [{name: "Man United", total:5, values:[2,1,1,1]},
 
 function setup() {
     createCanvas(1000,1000);
+    generateData()
     chart01 = new BarChart(data01);
     chart01.chartWidth = 300;
     chart01.chartHeight = 300;

@@ -79,6 +79,7 @@ class BarChart{
             fill(0);
             noStroke();
             textSize(11);
+            textFont(fontTitle);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), -15, this.tickSpacing * -i);
         }
@@ -108,6 +109,7 @@ class BarChart{
                 noStroke();
                 fill(0);
                 textSize(16);
+                textFont(fontTitle);
                 textAlign(CENTER, BOTTOM);
                 text(this.data[i].points, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, this.scaledData(-this.data[i].points));
             }
@@ -129,6 +131,7 @@ class BarChart{
                     noStroke();
                     fill(0);
                     textSize(14);
+                    textFont(fontRegular);
                     textAlign(CENTER, BOTTOM);
                     text(this.data[i].name, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, 20);
                 }
@@ -142,8 +145,9 @@ class BarChart{
         push()
         fill(127,0,0);
         textSize(16);
+        textFont(fontTitle);
         textAlign(CENTER, TOP);
-        translate(this.chartWidth/2, -this.chartHeight-30);
+        translate(this.chartWidth/2, -this.chartHeight-35);
         text(this.title, 0,0);
         pop()
     }

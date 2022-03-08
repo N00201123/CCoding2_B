@@ -87,12 +87,14 @@ class ScatteredChart{
             fill(0);
             noStroke();
             textSize(11);
+            textFont(fontRegular);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), this.tickSpacing *i, 15);
 
             fill(0);
             noStroke();
             textSize(11);
+            textFont(fontRegular);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces),-15, this.tickSpacing *-i);
         }
@@ -114,6 +116,7 @@ class ScatteredChart{
                 noStroke();
                 fill(255);
                 textSize(16);
+                textFont(fontRegular);
                 textAlign(LEFT, CENTER);
                 text(this.data[i].total, this.scaledData(this.data[i].total), ((this.barWidth + this.spacing) * -i) + this.barWidth / -2);
             }
@@ -125,6 +128,7 @@ class ScatteredChart{
                     noStroke();
                     fill(this.colors[colorNumber]);
                     textSize(14);
+                    textFont(fontRegular);
                     textAlign(CENTER, CENTER);
                     translate(0,-this.margin+5);
                     text(this.data[i].name, this.scaledData(this.data[i].goalConceded), this.scaledData2(-this.data[i].goalScored));
@@ -160,8 +164,9 @@ class ScatteredChart{
         push()
         fill(127,0,0);
         textSize(16);
+        textFont(fontTitle);
         textAlign(CENTER, TOP);
-        translate(this.chartWidth/2, -this.chartHeight-35);
+        translate(this.chartWidth/2, -this.chartHeight-40);
         text(this.title, 0,0);
         pop()
     }
