@@ -22,6 +22,7 @@ class LineChart{
         this.showValues = false;
         this.showLabels = true;
         this.rotateLabels = true;
+        this.showLegend = true;
 
         this.colors = [color('#F43910'), color('#C90808'), color('#F3AEAE'), color('#0D2968'), color('#96B2F1'), color('#FFFFFF')];
 
@@ -81,6 +82,7 @@ class LineChart{
             fill(0);
             noStroke();
             textSize(11);
+            textFont(fontRegular);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), -15, this.tickSpacing * -i);
 
@@ -131,6 +133,7 @@ class LineChart{
                 noStroke();
                 fill(0);
                 textSize(16);
+                textFont(fontRegular);
                 textAlign(CENTER, BOTTOM);
                 text(this.data[i].season, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, this.scaledData(-this.data[i].season));
             }
@@ -157,6 +160,8 @@ class LineChart{
                 }
                 
             }
+
+            
         }
         pop();
     }
@@ -174,7 +179,8 @@ class LineChart{
     drawhorizontalTitle(){
         push()
         fill(127,0,0);
-        textSize(14)
+        textSize(14);
+        textFont(fontTitle);
         textAlign(CENTER,BOTTOM);
         translate(this.chartWidth/2,80);
         text(this.horizontalTitle, 0,0);
@@ -184,7 +190,8 @@ class LineChart{
     drawverticalTitle(){
         push()
         fill(127,0,0);
-        textSize(14)
+        textSize(14);
+        textFont(fontTitle);
         textAlign(CENTER,BOTTOM);
         translate(-35, -this.chartHeight/2);
         rotate(PI/-2);

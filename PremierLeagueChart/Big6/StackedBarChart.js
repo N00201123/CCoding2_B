@@ -21,7 +21,7 @@ class StackedBarChart{
         this.verticalTitle = "Trophies"
         this.showLegend = true;
 
-        this.showValues = false;
+        this.showValues = true;
         this.showLabels = true;
         this.rotateLabels = true;
 
@@ -81,6 +81,7 @@ class StackedBarChart{
             fill(0);
             noStroke();
             textSize(11);
+            textFont(fontRegular);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), -15, this.tickSpacing * -i);
         }
@@ -115,6 +116,7 @@ class StackedBarChart{
                 noStroke();
                 fill(0);
                 textSize(16);
+                textFont(fontRegular);
                 textAlign(CENTER, BOTTOM);
                 text(this.data[i].total, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, this.scaledData(-this.data[i].total));
             }
@@ -126,6 +128,7 @@ class StackedBarChart{
                     noStroke();
                     fill(0);
                     textSize(14);
+                    textFont(fontTitle);
                     textAlign(LEFT, CENTER);
     
                     translate(((this.barWidth + this.spacing) * i) + this.barWidth / 2, 10);
@@ -136,6 +139,7 @@ class StackedBarChart{
                     noStroke();
                     fill(0);
                     textSize(14);
+                    textFont(fontTitle);
                     textAlign(CENTER, BOTTOM);
                     text(this.data[i].name, ((this.barWidth + this.spacing) * i) + this.barWidth / 2, 20);
                 }
@@ -152,7 +156,8 @@ class StackedBarChart{
                 
                 fill(0);
                 noStroke();
-                textSize();
+                textSize(12);
+                textFont(fontRegular);
                 textAlign(LEFT, CENTER);
                 text("EPL",this.chartWidth+40, this.legendSpace*-0);
                 //FA CUP
@@ -161,7 +166,8 @@ class StackedBarChart{
 
                 fill(0);
                 noStroke();
-                textSize();
+                textSize(12);
+                textFont(fontRegular);
                 textAlign(LEFT, CENTER);
                 text("FA Cup",this.chartWidth+40, this.legendSpace*-1);
                 //EFL CUP
@@ -170,7 +176,8 @@ class StackedBarChart{
 
                 fill(0);
                 noStroke();
-                textSize();
+                textSize(12);
+                textFont(fontRegular);
                 textAlign(LEFT, CENTER);
                 text("EFL Cup",this.chartWidth+40, this.legendSpace*-2);
                 //European Trophies
@@ -178,7 +185,8 @@ class StackedBarChart{
                 rect(this.chartWidth+20, -this.legendSpace*3 -5, 10, 10);
 
                 fill(0);
-                textSize();
+                textSize(12);
+                textFont(fontRegular);
                 textAlign(LEFT, CENTER);
                 text("European Trophies",this.chartWidth+40, this.legendSpace*-3);
                 pop();
@@ -191,8 +199,9 @@ class StackedBarChart{
         push()
         fill(127,0,0);
         textSize(16);
+        textFont(fontTitle);
         textAlign(CENTER, TOP);
-        translate(this.chartWidth/2, -this.chartHeight-30);
+        translate(this.chartWidth/2, -this.chartHeight-32);
         text(this.title, 0,0);
         pop()
     }
@@ -201,6 +210,7 @@ class StackedBarChart{
         push()
         fill(127,0,0);
         textSize(14)
+        textFont(fontTitle);
         textAlign(CENTER,BOTTOM);
         translate(this.chartWidth/2,80);
         text(this.horizontalTitle, 0,0);
@@ -211,6 +221,7 @@ class StackedBarChart{
         push()
         fill(127,0,0);
         textSize(14)
+        textFont(fontTitle);
         textAlign(CENTER,BOTTOM);
         translate(-35, -this.chartHeight/2);
         rotate(PI/-2);
