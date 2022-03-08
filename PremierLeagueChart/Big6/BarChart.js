@@ -79,7 +79,7 @@ class BarChart{
             fill(0);
             noStroke();
             textSize(11);
-            textFont(fontTitle);
+            textFont(fontRegular);
             textAlign(RIGHT, CENTER);
             text((i * this.tickIncrements).toFixed(this.numPlaces), -15, this.tickSpacing * -i);
         }
